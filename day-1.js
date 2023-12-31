@@ -7,11 +7,9 @@ let test = ['1abc2',
 
 
 function addTogether(array){
-    console.log("adding together")
     return array.reduce((acc, curr) => {
         let sum = parseInt(acc);
         let add = parseInt(curr);
-        console.log(sum + " + " + add )
         return sum+=add
     })
 }
