@@ -33,7 +33,7 @@ function extractNum(array) {
    
 }
 
-console.log(extractNum(test))
+//console.log(extractNum(test))
 
 let input = [
     "fouronevhnrz44",
@@ -1038,4 +1038,87 @@ let input = [
     "15nine1",
 ]
 
-console.log(extractNum(input))
+//console.log(extractNum(input))
+
+//Part two
+
+//create a fn thatconverts "one" to 1 
+
+function convertNum(word){
+    let num = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    let array = [];
+    let answerArray = [];
+    num.map((value) => {
+        if(word.match(value)){
+            array.push(value)
+        }
+    })
+    array.map((value) => {
+
+        switch(value){
+            case 'one':
+                answerArray.push(1)
+                break;
+            case 'two':
+                answerArray.push(2)
+                break;
+            case 'three':
+                
+                answerArray.push(3)
+                
+                break;
+            case 'four':
+                
+                answerArray.push(4)
+                
+                break;
+            case 'five':
+                
+                answerArray.push(5)
+                
+                break;
+            case 'six':
+                
+                answerArray.push(6)
+                
+                break;
+            case 'seven':
+                
+                answerArray.push(7)
+                
+                break;
+            case 'eight':
+                
+                answerArray.push(8)
+                
+                break;
+            case 'nine':
+                
+                answerArray.push(9)
+                
+                break;
+            
+        }   
+    })
+    let answer = answerArray[0] + answerArray[answerArray.length - 1];
+    return answer
+
+}
+
+function addValues(arr){
+    return arr.map((value) => {
+        return convertNum(value)
+    })
+}
+
+let testDay2 = [
+"two1nine",
+"eightwothree",
+"abcone2threexyz",
+"xtwone3four",
+"4nineeightseven2",
+"zoneight234",
+"7pqrstsixteen"]
+console.log(addValues(testDay2))
+
+//have to detect match by index number first instead of what number comes first
